@@ -1,0 +1,26 @@
+{
+	"name": "Tech-Forward-dashboard",
+	"version": "0.0.2",
+	"description": "Tech forward - listing forward-thinking organizations, tools, and resources",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "^4.14.1",
+		"google-spreadsheets": "^0.5.1",
+		"async": "^2.1.4",
+		"lodash": "^4.17.4"
+	},
+	"engines": {
+		"node": "4.4.5"
+	},
+	"keywords": [
+		"node",
+		"express",
+		"googlesheets",
+		"charts",
+		"dashboard"
+	],
+	"license": "MIT"
+}
