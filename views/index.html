@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tech Forward</title>
+    <meta name="description" content="Tech organizations & tools working for social progress.">
+    <link id="favicon" rel="icon" href="https://gomix.com/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css"><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css"><![endif]-->
+
+        <script id="org-template" type="text/x-handlebars-template">
+            <div class="media" id="org-{{ slug }}">
+                <a href="{{ url }}" class="media-figure">
+                    {{#if customImage}}
+                    <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
+                    {{else}}
+                    <img src="images/pic{{ imageNum }}.jpg" alt="{{ name }}" class="item-logo">
+                    {{/if}}
+                </a>
+
+                <div class="media-body">
+                    <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                    <p>{{ description }}</p>
+                    {{#if location}}
+                    <p>LOCATION: {{ location }}</p>
+                    {{/if}}
+
+                    <a href="{{ joinUrl }}" class="button small">Join</a>
+                </div>
+            </div>
+
+            <hr>
+        </script>
+        <script id="tool-template" type="text/x-handlebars-template">
+            <div class="media">
+                <a href="{{ url }}" class="media-figure">
+                    {{#if customImage}}
+                    <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
+                    {{else}}
+                    <img src="images/pic{{ imageNum }}.jpg" alt="{{ name }}" class="item-logo">
+                    {{/if}}
+                </a>
+
+                <div class="body media-body">
+                    <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                    <p>{{ description }}</p>
+                    {{#if builtBy}}
+                    <p>BUILT BY: <a href="{{ builtBy.url }}">{{ builtBy.text }}</a></p>
+                    {{/if}}
+                </div>
+            </div>
+
+            <hr>
+        </script>
+        <script id="resource-template" type="text/x-handlebars-template">
+            <div class="media">
+                <a href="{{ url }}" class="media-figure">
+                    {{#if customImage}}
+                    <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
+                    {{else}}
+                    <img src="images/pic{{ imageNum }}.jpg" alt="{{ name }}" class="item-logo">
+                    {{/if}}
+                </a>
+
+                <div class="media-body">
+                    <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                    <p>{{ description }}</p>
+                    {{#if builtBy}}
+                    <p>BUILT BY: <a href="{{ builtBy.url }}">{{ builtBy.text }}</a></p>
+                    {{/if}}
+                </div>
+            </div>
+
+            <hr>
+        </script>
+    </head>
+    <body>
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <div class="inner">
+
+                            <!-- Logo -->
+                                <a href="/" class="logo">
+                                    <span class="symbol"><img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Fsvg%2Bxml.svg" alt=""></span><span class="title">Tech Forward</span>
+                                </a>
+
+                            <!-- Nav -->
+                            <!--
+                                <nav>
+                                    <ul>
+                                        <li><a href="#menu">Menu</a></li>
+                                    </ul>
+                                </nav>
+                            -->
+
+                        </div>
+                    </header>
+
+                <!-- Menu -->
+                <!--
+                    <nav id="menu">
+                        <h2>Menu</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="generic.html">Ipsum veroeros</a></li>
+                            <li><a href="generic.html">Tempus etiam</a></li>
+                            <li><a href="generic.html">Consequat dolor</a></li>
+                            <li><a href="elements.html">Elements</a></li>
+                        </ul>
+                    </nav>
+                -->
+
+                <!-- Main -->
+                <div id="main">
+                    <div class="inner">
+                        <header>
+                            <h1>Tech organizations &amp; tools working for social progress.</h1>
+                            <!--
+                            <p>Working in parallel towards the same goal. Something catchy here.</p>
+                            -->
+
+                        </header>
+                        <div class="intro">
+                            <p>You've probably asked it. "I'm a technologist. I know I can work for change the same as everyone—call my senator, donate to the causes that matter, protest. But what can I <em>uniquely</em> do?"</p>
+                            <!-- <p>Something something about your unique ability that sets the stage for them to want to do all the stuff below</p> -->
+                        </div>
+                        <div class="content">
+                            <hr>
+
+                            <a href="#orgs">Organizations</a> | <a href="#tools">Tools</a> | <a href="#resources">Resources</a>
+
+                            <br><br>
+                            <h2 id="orgs">Organizations</h2>
+                            <section class="container--orgs"></section>
+
+                            <br><br>
+                            <h2 id="tools">Tools</h2>
+                            <section class="container--tools"></section>
+
+                            <br><br>
+                            <h2 id="resources">Resources</h2>
+                            <section class="container--resources"></section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                    <footer id="footer">
+                        <div class="inner">
+                            <section>
+                            <!--
+                                <h2>Get in touch</h2>
+                                <form method="post" action="#">
+                                    <div class="field half first">
+                                        <input type="text" name="name" id="name" placeholder="Name">
+                                    </div>
+                                    <div class="field half">
+                                        <input type="email" name="email" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="field">
+                                        <textarea name="message" id="message" placeholder="Message"></textarea>
+                                    </div>
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Send" class="special"></li>
+                                    </ul>
+                                </form>
+                                -->
+                            </section>
+                            <section>
+                                <h2>Follow</h2>
+                                <ul class="icons">
+                                    <li><a href="https://twitter.com/staywoke" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                                    <li><a href="https://github.com/staywokeorg/tech-forward" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+                                    <!--
+                                    <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+                                    <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                    <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+                                    <li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+                                    <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+                                    -->
+                                </ul>
+                            </section>
+                            <ul class="copyright">
+                                <li>&copy; <a href="http://staywoke.org/">#StayWoke</a>. MIT License.</li>
+                                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                                <li>Open source: <a href="https://github.com/staywokeorg/tech-forward">GitHub</a>
+                                <li>View source or remix: <a href="https://gomix.com/#!/project/tech-forward-2">Gomix</a>
+                            </ul>
+                        </div>
+                    </footer>
+            </div>
+
+    
+        <!-- Scripts -->
+          <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+          integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+          crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" crossorigin="anonymous"></script>
+          <!--script src="js/phantom.js"></script-->
+          <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+          <script src="js/app.js"></script>
+
+          <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-90142132-2', 'auto');
+            ga('send', 'pageview');
+          </script>
+          
+          <script src="/client.js"></script>
+  </body>
+</html>
