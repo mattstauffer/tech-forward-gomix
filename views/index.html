@@ -18,7 +18,7 @@
                     {{#if customImage}}
                     <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
                     {{else}}
-                    <img src="images/pic{{ imageNum }}.jpg" alt="{{ name }}" class="item-logo">
+                    <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
                     {{/if}}
                 </a>
 
@@ -41,7 +41,7 @@
                     {{#if customImage}}
                     <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
                     {{else}}
-                    <img src="images/pic{{ imageNum }}.jpg" alt="{{ name }}" class="item-logo">
+                    <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
                     {{/if}}
                 </a>
 
@@ -62,7 +62,7 @@
                     {{#if customImage}}
                     <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
                     {{else}}
-                    <img src="images/pic{{ imageNum }}.jpg" alt="{{ name }}" class="item-logo">
+                    <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
                     {{/if}}
                 </a>
 
@@ -138,15 +138,15 @@
 
                             <br><br>
                             <h2 id="orgs">Organizations</h2>
-                            <section class="container--orgs"></section>
+                            <section class="container--orgs">Loading...</section>
 
                             <br><br>
                             <h2 id="tools">Tools</h2>
-                            <section class="container--tools"></section>
+                            <section class="container--tools">Loading...</section>
 
                             <br><br>
                             <h2 id="resources">Resources</h2>
-                            <section class="container--resources"></section>
+                            <section class="container--resources">Loading...</section>
                         </div>
                     </div>
                 </div>
@@ -218,7 +218,5 @@
             ga('create', 'UA-90142132-2', 'auto');
             ga('send', 'pageview');
           </script>
-          
-          <script src="/client.js"></script>
   </body>
 </html>
