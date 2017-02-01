@@ -26,7 +26,7 @@ const getSheet = function getSheet(sheetName) {
 
       // "spreadsheet key" is the long ID in the sheet's URL 
     GoogleSpreadsheets({
-      key: "1Kv7neJBJcg_ivrft2Wgd0Qs4DtpG7KCkZlnC3b234N8"
+      key: process.env.GOOGLE_SPREADSHEET_ID
     }, function(err, spreadsheet) {
       const sheet = sheets[sheetName]
       
