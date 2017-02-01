@@ -13,7 +13,7 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css"><![endif]-->
 
         <script id="org-template" type="text/x-handlebars-template">
-            <div class="media" id="org-{{ slug }}">
+            <div class="media item" id="org-{{ slug }}">
                 <a href="{{ url }}" class="media-figure">
                     {{#if logo}}
                     <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
@@ -36,7 +36,7 @@
             <hr>
         </script>
         <script id="tool-template" type="text/x-handlebars-template">
-            <div class="media">
+            <div class="media item">
                 <a href="{{ url }}" class="media-figure">
                     {{#if logo}}
                     <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
@@ -57,7 +57,7 @@
             <hr>
         </script>
         <script id="resource-template" type="text/x-handlebars-template">
-            <div class="media">
+            <div class="media item">
                 <a href="{{ url }}" class="media-figure">
                     {{#if logo}}
                     <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
@@ -105,28 +105,32 @@
 
                         </header>
                         <div class="intro">
-                            <p>You've probably asked it. "I'm a technologist. I know I can work for change the same as everyone—call my senator, donate to the causes that matter, protest. But what can I <em>uniquely</em> do?"</p>
-                            <!-- <p>Something something about your unique ability that sets the stage for them to want to do all the stuff below</p> -->
+                            <p>You've probably said it. "I'm a technologist. I know I can work for change the same as everyone—call my senator, donate to the causes that matter, protest. But what can I <em>uniquely</em> do?"</p>
+                            <p>There are dozens of ways you can get involved; organizations to join, tools to contribute to, and resources to take advantage of. Your favorite missing? <a href="./add">Let us know.</a></p>
                         </div>
                         <div class="content">
                             <hr>
-
-                            <a href="#orgs">Organizations</a> | <a href="#tools">Tools</a> | <a href="#resources">Resources</a>
+                            
+                            <div class="page-nav">
+                              <a href="#orgs">Organizations</a> | <a href="#tools">Tools</a> | <a href="#resources">Resources</a>
+                            </div>
+                          
+                            <hr>
 
                             <br><br>
                             <h2 id="orgs">Organizations</h2>
                             <p>Organizations that bring together technologists to do good.</p>
-                            <section class="container--orgs">Loading...</section>
+                            <section class="item-container container--orgs">Loading...</section>
 
                             <br><br>
                             <h2 id="tools">Tools</h2>
                             <p>Open source tools that technologists can use or contribute to.</p>
-                            <section class="container--tools">Loading...</section>
+                            <section class="item-container container--tools">Loading...</section>
 
                             <br><br>
                             <h2 id="resources">Resources</h2>
                             <p>Tech-based online resources—usable by anyone, powered by tech.</p>
-                            <section class="container--resources">Loading...</section>
+                            <section class="item-container container--resources">Loading...</section>
                         </div>
                     </div>
                 </div>

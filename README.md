@@ -7,12 +7,12 @@ Sharing tech-focused organizations and tools working for social progress.
 - [x] How do we handle image uploads? (answer: require a URL for now)
 
 ### Must do for launch
-- [ ] Redirect domain (in progress... dns propagating...)
 - [ ] Set up Google Forms and properly lock down the spreadsheet
+- [x] Redirect domain (in progress... dns propagating...)
 - [x] Try to add these: http://up.stauffe.red/0a3X0n0X1F0Q and consider a separate phone section
 - [x] Move all logos onto gomix cdn
-- [ ] Manually import all ProgCode projects
-- [ ] Manually import all DevProgress projects
+- [x] Manually import all ProgCode projects
+- [x] Manually import all DevProgress projects
 - [x] Make a fallback logo
 
 ### Nice to have
@@ -23,9 +23,9 @@ Sharing tech-focused organizations and tools working for social progress.
 - [ ] For all resources, track whether they're vetted (will they sell your phone number? Is it open source?)
 
 ### Content stuff
+* [ ] Show skills for tools
 * [ ] Add some content or qualifiers for who should be in here
 * [ ] Handle multi-location (e.g. Tech Solidarity)
-* [ ] Show skills for tools
 * [ ] Get real intro content that is compelling
 * [ ] Build a "what's best for me" tool
 

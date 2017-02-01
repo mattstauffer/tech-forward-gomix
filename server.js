@@ -8,6 +8,10 @@ app.get('/', function (request, response) {
   response.sendFile(__dirname + '/views/index.html')
 })
 
+app.get('/add', function (request, response) {
+  response.sendFile(__dirname + '/views/add-forms.html')
+})
+
 const json = require('./src/controller/json')
 
 app.get('/data/orgs.json', json.orgs)
