@@ -15,10 +15,10 @@
         <script id="org-template" type="text/x-handlebars-template">
             <div class="media" id="org-{{ slug }}">
                 <a href="{{ url }}" class="media-figure">
-                    {{#if customImage}}
-                    <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
-                    {{else}}
+                    {{#if logo}}
                     <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                    {{else}}
+                    <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
                     {{/if}}
                 </a>
 
@@ -38,10 +38,10 @@
         <script id="tool-template" type="text/x-handlebars-template">
             <div class="media">
                 <a href="{{ url }}" class="media-figure">
-                    {{#if customImage}}
-                    <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
-                    {{else}}
+                    {{#if logo}}
                     <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                    {{else}}
+                    <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
                     {{/if}}
                 </a>
 
@@ -59,10 +59,10 @@
         <script id="resource-template" type="text/x-handlebars-template">
             <div class="media">
                 <a href="{{ url }}" class="media-figure">
-                    {{#if customImage}}
-                    <img src="{{ customImage }}" alt="{{ name }}" class="item-logo">
-                    {{else}}
+                    {{#if logo}}
                     <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                    {{else}}
+                    <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
                     {{/if}}
                 </a>
 
@@ -115,14 +115,17 @@
 
                             <br><br>
                             <h2 id="orgs">Organizations</h2>
+                            <p>Organizations that bring together technologists to do good.</p>
                             <section class="container--orgs">Loading...</section>
 
                             <br><br>
                             <h2 id="tools">Tools</h2>
+                            <p>Open source tools that technologists can use or contribute to.</p>
                             <section class="container--tools">Loading...</section>
 
                             <br><br>
                             <h2 id="resources">Resources</h2>
+                            <p>Tech-based online resources—usable by anyone, powered by tech.</p>
                             <section class="container--resources">Loading...</section>
                         </div>
                     </div>
@@ -170,6 +173,7 @@
                                 <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
                                 <li>Open source: <a href="https://github.com/mattstauffer/tech-forward-gomix">GitHub</a>
                                 <li>View source or remix: <a href="https://gomix.com/#!/project/tech-forward-2">Gomix</a>
+                                <li>Other projects doing similar work: <a href="https://github.com/katerabinowitz/Code-Against-Trump">Code Against Trump</a> | <a href="http://technicalmajority.com/">Technical Majority</a>
                             </ul>
                         </div>
                     </footer>
