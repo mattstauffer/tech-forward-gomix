@@ -1,6 +1,8 @@
 # Tech Forward
 Sharing tech-focused organizations and tools working for social progress.
 
+Built by @stauffermatt and @anildash
+
 ## To do
 - [x] Figure out the timeouts; is there a rate limit on the Google Sheet? If so, can we cache it? (race condition, not timeout)
 - [x] Hook up a github project for backups
@@ -18,8 +20,8 @@ Sharing tech-focused organizations and tools working for social progress.
 
 ### Nice to have
 - [x] Add OG & twitter card
-- [ ] Add favico
-- [ ] Slap some fonts and centering on that suggestion page
+- [x] Add favico
+- [x] Slap some fonts and centering on that suggestion page
 - [x] Import lots of logos
 - [x] Bring over any files we need from Phantom
 - [x] Determine whether we can survive without a build step; if not, move source files into the built CSS files here so we have the originals

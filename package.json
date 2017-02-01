@@ -24,8 +24,19 @@
 		"node",
 		"express",
 		"googlesheets",
-		"charts",
-		"dashboard"
+    "resistance",
+    "progress"
 	],
+  "author": {
+    "name": "Matt Stauffer",
+    "email": "matt@mattstauffer.co",
+    "url": "https://mattstauffer.co"
+  },
+  "contributors": [
+    {
+      "name": "Anil Dash",
+      "url": "http://anildash.com"
+    }
+  ],
 	"license": "MIT"
 }

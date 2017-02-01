@@ -24,7 +24,7 @@ const getSheet = function getSheet(sheetName) {
       return reject('Not a valid sheet')
     }
 
-      // "spreadsheet key" is the long ID in the sheet's URL 
+    // "spreadsheet key" is the long ID in the sheet's URL 
     GoogleSpreadsheets({
       key: process.env.GOOGLE_SPREADSHEET_ID
     }, function(err, spreadsheet) {
