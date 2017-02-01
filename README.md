@@ -23,7 +23,7 @@ Sharing tech-focused organizations and tools working for social progress.
 - [ ] For all resources, track whether they're vetted (will they sell your phone number? Is it open source?)
 
 ### Content stuff
-* [ ] Show skills for tools
+* [x] Show skills for tools
 * [ ] Add some content or qualifiers for who should be in here
 * [ ] Handle multi-location (e.g. Tech Solidarity)
 * [ ] Get real intro content that is compelling
