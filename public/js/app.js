@@ -31,6 +31,7 @@ client.get('data/resources.json')
         })
     })
 
+// @todo: Move this decoration to the backend! This is leftover from when data was stored in JSON locally
 function baseDecorate(item)
 {
   item.slug = slugify(item.name)
