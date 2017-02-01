@@ -6,6 +6,7 @@ const returnSheet = function sheet(sheetName, req, res) {
       res.send(data)
     }, (reason) => {
       console.log('error', reason)
+      res.send('error')
     })
 }
 
@@ -14,6 +15,13 @@ const returnSheet = function sheet(sheetName, req, res) {
  */
 const orgs = function orgs(req, res) {
   returnSheet('orgs', req, res)
+}
+
+/**
+ * returns all projects in a JSON file
+ */
+const projects = function orgs(req, res) {
+  returnSheet('projects', req, res)
 }
 
 /**
@@ -32,6 +40,7 @@ const resources = function orgs(req, res) {
 
 module.exports = {
   orgs,
+  projects,
   tools,
   resources
 }

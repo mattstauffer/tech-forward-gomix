@@ -7,13 +7,17 @@ const sheets = {
     'number': 0,
     'range': 'R1C1:R99C9'
   },
-  'tools': {
+  'projects': {
     'number': 1,
     'range': 'R1C1:R99C9'
   },
-  'resources': {
+  'tools': {
     'number': 2,
     'range': 'R1C1:R99C5'
+  },
+  'resources': {
+    'number': 3,
+    'range': 'R1C1:R99C6'
   }
 }
 
@@ -28,6 +32,9 @@ const getSheet = function getSheet(sheetName) {
     GoogleSpreadsheets({
       key: process.env.GOOGLE_SPREADSHEET_ID
     }, function(err, spreadsheet) {
+      if (err) {
+        return reject('error loading spreadsheet')
+      }
       const sheet = sheets[sheetName]
       
       spreadsheet.worksheets[sheet.number].cells({

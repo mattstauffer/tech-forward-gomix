@@ -55,7 +55,7 @@
 
           <hr>
       </script>
-      <script id="tool-template" type="text/x-handlebars-template">
+      <script id="project-template" type="text/x-handlebars-template">
           <div class="media item">
               <a href="{{ url }}" class="media-figure">
                     {{#if logo}}
@@ -79,7 +79,7 @@
 
                 <hr>
         </script>
-        <script id="resource-template" type="text/x-handlebars-template">
+        <script id="tool-template" type="text/x-handlebars-template">
             <div class="media item">
                 <a href="{{ url }}" class="media-figure">
                     {{#if logo}}
@@ -99,6 +99,27 @@
             </div>
 
             <hr>
+        </script>
+        <script id="resource-template" type="text/x-handlebars-template">
+          <div class="media item">
+              <a href="{{ url }}" class="media-figure">
+                    {{#if logo}}
+                      <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                      {{else}}
+                      <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                      {{/if}}
+                  </a>
+
+                  <div class="body media-body">
+                      <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                      <p>{{ description }}</p>
+                      {{# if contact}}
+                        <p><a href="{{ contact }}">Contact</a></p>
+                      {{/if}}
+                    </div>
+                </div>
+
+                <hr>
         </script>
     </head>
     <body>
@@ -131,7 +152,7 @@
                             <hr>
                             
                             <div class="page-nav">
-                              <a href="#orgs">Organizations</a> | <a href="#tools">Tools</a> | <a href="#resources">Resources</a>
+                              <a href="#orgs">Organizations</a> | <a href="#projects">Projects</a> | <a href="#resources">Resources</a> | <a href="#tools">Tools</a>
                             </div>
                           
                             <hr>
@@ -142,14 +163,20 @@
                             <section class="item-container container--orgs">Loading...</section>
 
                             <br><br>
-                            <h2 id="tools">Tools</h2>
-                            <p>Open source tools that technologists can use or contribute to.</p>
-                            <section class="item-container container--tools">Loading...</section>
+                            <h2 id="projects">Projects</h2>
+                            <p>Open source projects that technologists can use or contribute to.</p>
+                            <section class="item-container container--projects">Loading...</section>
 
                             <br><br>
                             <h2 id="resources">Resources</h2>
-                            <p>Tech-based online resources—usable by anyone, powered by tech.</p>
+                            <p>Services or agencies that provide free support to activists & progressive tech work</p>
                             <section class="item-container container--resources">Loading...</section>
+                          
+                            <br><br>
+                            <h2 id="tools">Tools</h2>
+                            <p>Tech-based online tools—usable by anyone, powered by tech.</p>
+                            <section class="item-container container--tools">Loading...</section>
+                          
                         </div>
                     </div>
                 </div>

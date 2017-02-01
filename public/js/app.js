@@ -1,9 +1,11 @@
 const client = axios.create({});
 
 var $orgsContainer = $('.container--orgs'),
+    $projectsContainer = $('.container--projects'),
     $toolsContainer = $('.container--tools'),
     $resourcesContainer = $('.container--resources'),
     orgTemplate = Handlebars.compile($('#org-template').html()),
+    projectTemplate = Handlebars.compile($('#project-template').html()),
     toolTemplate = Handlebars.compile($('#tool-template').html()),
     resourceTemplate = Handlebars.compile($('#resource-template').html())
 
@@ -12,6 +14,14 @@ client.get('data/orgs.json')
         $orgsContainer.html('')
         response.data.forEach(org => {
             $orgsContainer.append(orgTemplate(decorateOrg(org)))
+        })
+    })
+
+client.get('data/projects.json')
+    .then(response => {
+        $projectsContainer.html('')
+        response.data.forEach(project => {
+            $projectsContainer.append(projectTemplate(decorateProject(project)))
         })
     })
 
@@ -31,6 +41,7 @@ client.get('data/resources.json')
         })
     })
 
+
 // @todo: Move this decoration to the backend! This is leftover from when data was stored in JSON locally
 function baseDecorate(item)
 {
@@ -47,6 +58,11 @@ function decorateOrg(org)
   org.location = buildLocationString(org);
 
   return org
+}
+
+function decorateProject(project)
+{
+  return baseDecorate(project)
 }
 
 function decorateTool(tool)

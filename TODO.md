@@ -4,7 +4,7 @@
 - [x] How do we handle image uploads? (answer: require a URL for now)
 
 ### Must do for launch
-- [ ] Properly lock down the spreadsheet
+- [x] Properly lock down the spreadsheet
 - [x] Set up Google Forms
 - [x] Redirect domain (in progress... dns propagating...)
 - [x] Try to add these: http://up.stauffe.red/0a3X0n0X1F0Q and consider a separate phone section
@@ -15,6 +15,7 @@
 - [x] Fix the join links 👀
 
 ### Nice to have
+- [ ] Move suggestion form URLs to environment variables
 - [ ] Write tests around importers
 - [ ] For all resources, track whether they're vetted (will they sell your phone number? Is it open source?)
 - [x] Add OG & twitter card
