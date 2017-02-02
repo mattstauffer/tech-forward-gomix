@@ -1,10 +1,14 @@
 const client = axios.create({});
 
 var $orgsContainer = $('.container--orgs'),
+    $projectsContainer = $('.container--projects'),
     $toolsContainer = $('.container--tools'),
+    $dataSourcesContainer = $('.container--data-sources'),
     $resourcesContainer = $('.container--resources'),
     orgTemplate = Handlebars.compile($('#org-template').html()),
+    projectTemplate = Handlebars.compile($('#project-template').html()),
     toolTemplate = Handlebars.compile($('#tool-template').html()),
+    dataSourceTemplate = Handlebars.compile($('#data-source-template').html()),
     resourceTemplate = Handlebars.compile($('#resource-template').html())
 
 client.get('data/orgs.json')
@@ -12,6 +16,14 @@ client.get('data/orgs.json')
         $orgsContainer.html('')
         response.data.forEach(org => {
             $orgsContainer.append(orgTemplate(decorateOrg(org)))
+        })
+    })
+
+client.get('data/projects.json')
+    .then(response => {
+        $projectsContainer.html('')
+        response.data.forEach(project => {
+            $projectsContainer.append(projectTemplate(decorateProject(project)))
         })
     })
 
@@ -23,6 +35,14 @@ client.get('data/tools.json')
         })
     })
 
+client.get('data/data-sources.json')
+    .then(response => {
+        $dataSourcesContainer.html('')
+        response.data.forEach(dataSource => {
+            $dataSourcesContainer.append(dataSourceTemplate(decorateDataSource(dataSource)))
+        })
+    })
+
 client.get('data/resources.json')
     .then(response => {
         $resourcesContainer.html('')
@@ -31,6 +51,8 @@ client.get('data/resources.json')
         })
     })
 
+
+// @todo: Move this decoration to the backend! This is leftover from when data was stored in JSON locally
 function baseDecorate(item)
 {
   item.slug = slugify(item.name)
@@ -48,9 +70,19 @@ function decorateOrg(org)
   return org
 }
 
+function decorateProject(project)
+{
+  return baseDecorate(project)
+}
+
 function decorateTool(tool)
 {
   return baseDecorate(tool)
+}
+
+function decorateDataSource(dataSource)
+{
+  return baseDecorate(dataSource)
 }
 
 function decorateResource(resource)
