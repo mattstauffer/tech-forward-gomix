@@ -2,16 +2,17 @@
 <html>
     <head>
       <title>Tech Forward</title>
+      
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
       <meta name="description" content="Discover tech organizations and tools working for social progress.">
       
       <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Ffavicon-32x32.png">
       <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Ffavicon-96x96.png">
       <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Ffavicon-16x16.png">
       
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <meta property="og:type" content="website">
       <meta property="og:title" content="Tech Forward">
       <meta property="og:description" content="Discover new tech organizations and tools working together for social progress">
@@ -25,7 +26,7 @@
       <meta name="twitter:image" content="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Ftech-forward-twitter.png">
       <meta name="twitter:creator" content="@stauffermatt">
 
-      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/css/phantom.css">
       <link rel="stylesheet" href="/css/custom.css">
 
       <script id="org-template" type="text/x-handlebars-template">
@@ -101,25 +102,43 @@
             <hr>
         </script>
         <script id="resource-template" type="text/x-handlebars-template">
-          <div class="media item">
-              <a href="{{ url }}" class="media-figure">
+            <div class="media item">
+                <a href="{{ url }}" class="media-figure">
                     {{#if logo}}
-                      <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
-                      {{else}}
-                      <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
-                      {{/if}}
-                  </a>
+                    <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                    {{else}}
+                    <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                    {{/if}}
+                </a>
 
-                  <div class="body media-body">
-                      <a href="{{ url }}"><h3>{{ name }}</h3></a>
-                      <p>{{ description }}</p>
-                      {{# if contact}}
-                        <p><a href="{{ contact }}">Contact</a></p>
-                      {{/if}}
-                    </div>
+                <div class="body media-body">
+                    <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                    <p>{{ description }}</p>
+                    {{# if contact}}
+                    <p><a href="{{ contact }}">Contact</a></p>
+                    {{/if}}
                 </div>
+            </div>
 
-                <hr>
+            <hr>
+        </script>
+        <script id="data-source-template" type="text/x-handlebars-template">
+          <div class="media item">
+                <a href="{{ url }}" class="media-figure">
+                    {{#if logo}}
+                    <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                    {{else}}
+                    <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                    {{/if}}
+                </a>
+
+                <div class="body media-body">
+                    <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                    <p>{{ description }}</p>
+                </div>
+            </div>
+
+            <hr>
         </script>
     </head>
     <body>
@@ -152,29 +171,34 @@
                             <hr>
                             
                             <div class="page-nav">
-                              <a href="#orgs">Organizations</a> | <a href="#projects">Projects</a> | <a href="#resources">Resources</a> | <a href="#tools">Tools</a>
+                              <a href="#orgs">Organizations</a> | <a href="#projects">Projects</a> | <a href="#resources">Resources</a> | <a href="#data-sources">Data Sources</a> | <a href="#tools">Tools</a>
                             </div>
                           
                             <hr>
 
                             <br><br>
-                            <h2 id="orgs">Organizations</h2>
-                            <p>Organizations that bring together technologists to do good.</p>
+                            <h2 id="orgs" class="section-title">Organizations</h2>
+                            <p>Organizations that bring technologists together to create new tech projects to work for progress.</p>
                             <section class="item-container container--orgs">Loading...</section>
 
                             <br><br>
-                            <h2 id="projects">Projects</h2>
+                            <h2 id="projects" class="section-title">Projects</h2>
                             <p>Open source projects that technologists can use or contribute to.</p>
                             <section class="item-container container--projects">Loading...</section>
 
                             <br><br>
-                            <h2 id="resources">Resources</h2>
-                            <p>Services or agencies that provide free support to activists & progressive tech work</p>
+                            <h2 id="resources" class="section-title">Resources</h2>
+                            <p>Services or agencies that provide free support to activists & progressive tech work.</p>
                             <section class="item-container container--resources">Loading...</section>
                           
                             <br><br>
-                            <h2 id="tools">Tools</h2>
-                            <p>Tech-based online tools—usable by anyone, powered by tech.</p>
+                            <h2 id="data-sources" class="section-title">Data Sources</h2>
+                            <p>Open sources of data for use in government/activism-focused applications.</p>
+                            <section class="item-container container--data-sources">Loading...</section>
+                          
+                            <br><br>
+                            <h2 id="tools" class="section-title">Tools</h2>
+                            <p>Web- or phone-based tools—usable by anyone, powered by tech.</p>
                             <section class="item-container container--tools">Loading...</section>
                           
                         </div>
@@ -215,7 +239,6 @@
                 </footer>
             </div>
 
-    
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-2.2.1.min.js"
         integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
@@ -223,8 +246,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" crossorigin="anonymous"></script>
-        <!--script src="js/phantom.js"></script-->
-        <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
+
         <script src="js/app.js"></script>
 
         <script>

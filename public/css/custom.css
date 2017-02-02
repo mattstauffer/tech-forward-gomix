@@ -10,6 +10,7 @@ html, body {
   font-weight: bold;
 }
 
+/* Flexbox Media Object */
 .media {
   display: -ms-flexbox;
   display: flex;
@@ -25,6 +26,7 @@ html, body {
   -ms-flex: 1;
   flex: 1;
 }
+/* End Flexob Media Object */
 
 h2 {
   font-size: 1.5em;
@@ -49,8 +51,11 @@ h2 {
     margin-top: -1em;
   }
 
+.section-title {
+  margin-bottom: 0.5em;
+}
+
 .item-logo {
-/*   border: 1px solid #ccc; */
   width: 100px;
 }
 
@@ -59,7 +64,7 @@ h2 {
 }
 
 .item-container hr {
-  margin 1em 0;
+  margin: 1.5em 0;
 }
 
 .copyright {

@@ -3,10 +3,12 @@ const client = axios.create({});
 var $orgsContainer = $('.container--orgs'),
     $projectsContainer = $('.container--projects'),
     $toolsContainer = $('.container--tools'),
+    $dataSourcesContainer = $('.container--data-sources'),
     $resourcesContainer = $('.container--resources'),
     orgTemplate = Handlebars.compile($('#org-template').html()),
     projectTemplate = Handlebars.compile($('#project-template').html()),
     toolTemplate = Handlebars.compile($('#tool-template').html()),
+    dataSourceTemplate = Handlebars.compile($('#data-source-template').html()),
     resourceTemplate = Handlebars.compile($('#resource-template').html())
 
 client.get('data/orgs.json')
@@ -30,6 +32,14 @@ client.get('data/tools.json')
         $toolsContainer.html('')
         response.data.forEach(tool => {
             $toolsContainer.append(toolTemplate(decorateTool(tool)))
+        })
+    })
+
+client.get('data/data-sources.json')
+    .then(response => {
+        $dataSourcesContainer.html('')
+        response.data.forEach(dataSource => {
+            $dataSourcesContainer.append(dataSourceTemplate(decorateDataSource(dataSource)))
         })
     })
 
@@ -68,6 +78,11 @@ function decorateProject(project)
 function decorateTool(tool)
 {
   return baseDecorate(tool)
+}
+
+function decorateDataSource(dataSource)
+{
+  return baseDecorate(dataSource)
 }
 
 function decorateResource(resource)

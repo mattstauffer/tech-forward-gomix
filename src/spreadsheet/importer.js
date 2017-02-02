@@ -18,6 +18,10 @@ const sheets = {
   'resources': {
     'number': 3,
     'range': 'R1C1:R99C6'
+  },
+  'dataSources': {
+    'number': 4,
+    'range': 'R1C1:R99C5'
   }
 }
 
@@ -28,13 +32,11 @@ const getSheet = function getSheet(sheetName) {
       return reject('Not a valid sheet')
     }
 
-    // "spreadsheet key" is the long ID in the sheet's URL 
     GoogleSpreadsheets({
       key: process.env.GOOGLE_SPREADSHEET_ID
     }, function(err, spreadsheet) {
-      if (err) {
-        return reject('error loading spreadsheet')
-      }
+      if (err) return reject('error loading spreadsheet:' + err)
+      
       const sheet = sheets[sheetName]
       
       spreadsheet.worksheets[sheet.number].cells({
