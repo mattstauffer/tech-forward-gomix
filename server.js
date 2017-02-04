@@ -1,4 +1,7 @@
 // init project
+const dotenv = require('dotenv')
+dotenv.load()
+
 const express = require('express')
 const app = express()
 
