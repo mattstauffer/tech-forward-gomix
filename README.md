@@ -1,11 +1,12 @@
 # Tech Forward
 Sharing tech-focused organizations and tools working for social progress.
 
-Built by @stauffermatt
+Built by @stauffermatt and friends
 
 ![](https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2FtechForwardGIF.gif)
 
 ## Getting Started
+
 
 ### On Gomix
 - Just [remix](https://gomix.com/#!/remix/tech-forward-2/16d249c6-c928-4616-a548-3108bce18ead) and add your Google Spreadsheet ID to `.env`.
