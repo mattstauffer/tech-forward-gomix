@@ -8,7 +8,7 @@ const index = function index (req, res) {
   const dataSources = importer.getSheet('dataSources')
 
   Promise.all([orgs, projects, tools, resources, dataSources]).then((output) => {
-    res.render('indexhbs', {
+    res.render('index', {
       title: 'Index',
       // @todo destructuring
       orgs: output[0],
