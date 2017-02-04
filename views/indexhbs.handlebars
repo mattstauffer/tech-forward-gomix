@@ -1,0 +1,166 @@
+<!-- Main -->
+<div id="main">
+    <div class="inner">
+        <header>
+            <h1>Tech organizations &amp; tools working for social progress.</h1>
+        </header>
+        <div class="intro">
+            <p>You've probably said it. "I'm a technologist. I know I can work for change the same as everyone—call my senator, donate to the causes that matter, protest. But what can I <em>uniquely</em> do?"</p>
+            <p>There are dozens of ways you can get involved; organizations to join, tools to contribute to, and resources to take advantage of. Your favorite missing? <a href="./add">Let us know.</a></p>
+        </div>
+        <div class="content">
+            <hr>
+
+            <div class="page-nav">
+              <a href="#orgs">Organizations</a> | <a href="#projects">Projects</a> | <a href="#resources">Resources</a> | <a href="#data-sources">Data Sources</a> | <a href="#tools">Tools</a>
+            </div>
+
+            <hr>
+
+            <br><br>
+            <h2 id="orgs" class="section-title">Organizations</h2>
+            <p>Organizations that bring technologists together to create new tech projects to work for progress.</p>
+            <section class="item-container container--orgs">
+
+            {{#each orgs}}
+                <div class="media item" id="org-{{ slug }}">
+                    <a href="{{ url }}" class="media-figure">
+                        {{#if logo}}
+                        <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                        {{else}}
+                        <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                        {{/if}}
+                    </a>
+
+                    <div class="media-body">
+                        <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                        <p>{{ description }}</p>
+                        {{#if location}}
+                        <p>LOCATION: {{ location }}</p>
+                        {{/if}}
+
+                        {{#if joinUrl}}
+                        <a href="{{ joinUrl }}" class="button small">Join</a>
+                        {{else}}
+                        <a href="{{ url }}" class="button small">Join</a>
+                        {{/if}}
+                    </div>
+                </div>
+
+                <hr>
+
+              {{/each}}
+
+            </section>
+
+            <br><br>
+            <h2 id="projects" class="section-title">Projects</h2>
+            <p>Open source projects that technologists can use or contribute to.</p>
+            <section class="item-container container--projects">
+                {{#each projects}}
+                <div class="media item">
+                    <a href="{{ url }}" class="media-figure">
+                        {{#if logo}}
+                          <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                          {{else}}
+                          <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                          {{/if}}
+                    </a>
+
+                    <div class="body media-body">
+                          <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                          <p>{{ description }}</p>
+                          {{#if builtBy}}
+                            <p>BUILT BY: <a href="{{ builtBy.url }}">{{ builtBy.text }}</a></p>
+                            {{/if}}
+                            {{#if skills}}
+                            <p>SKILLS NEEDED: {{ skills }}</p>
+                            {{/if}}
+                    </div>
+                </div>
+
+                <hr>
+                {{/each}}
+            </section>
+
+            <br><br>
+            <h2 id="resources" class="section-title">Resources</h2>
+            <p>Services or agencies that provide free support to activists &amp; progressive tech work.</p>
+            <section class="item-container container--resources">
+            {{#each resources}}
+                <div class="media item">
+                    <a href="{{ url }}" class="media-figure">
+                        {{#if logo}}
+                        <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                        {{else}}
+                        <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                        {{/if}}
+                    </a>
+
+                    <div class="body media-body">
+                        <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                        <p>{{ description }}</p>
+                        {{# if contact}}
+                        <p><a href="{{ contact }}">Contact</a></p>
+                        {{/if}}
+                    </div>
+                </div>
+
+                <hr>
+            {{/each}}
+            </section>
+
+            <br><br>
+            <h2 id="data-sources" class="section-title">Data Sources</h2>
+            <p>Open sources of data for use in government/activism-focused applications.</p>
+            <section class="item-container container--data-sources">
+            {{#each dataSources}}
+                <div class="media item">
+                    <a href="{{ url }}" class="media-figure">
+                        {{#if logo}}
+                        <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                        {{else}}
+                        <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                        {{/if}}
+                    </a>
+
+                    <div class="body media-body">
+                        <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                        <p>{{ description }}</p>
+                    </div>
+                </div>
+
+                <hr>
+            {{/each}}
+            </section>
+
+            <br><br>
+            <h2 id="tools" class="section-title">Tools</h2>
+            <p>Web- or phone-based tools—usable by anyone, powered by tech.</p>
+            <section class="item-container container--tools">
+            {{#each tools}}
+                <div class="media item">
+                    <a href="{{ url }}" class="media-figure">
+                        {{#if logo}}
+                        <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                        {{else}}
+                        <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                        {{/if}}
+                    </a>
+
+                    <div class="media-body">
+                        <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                        <p>{{ description }}</p>
+                        {{#if builtBy}}
+                        <p>BUILT BY: <a href="{{ builtBy.url }}">{{ builtBy.text }}</a></p>
+                        {{/if}}
+                    </div>
+                </div>
+
+                <hr>
+            {{/each}}
+            </section>
+
+        </div>
+    </div>
+</div>

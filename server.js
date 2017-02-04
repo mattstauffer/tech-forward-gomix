@@ -4,8 +4,12 @@ dotenv.load()
 
 const express = require('express')
 const app = express()
+const exphbs  = require('express-handlebars');
 
 app.use(express.static('public'))
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 app.get('/', function (request, response) {
   response.sendFile(__dirname + '/views/index.html')
@@ -14,6 +18,10 @@ app.get('/', function (request, response) {
 app.get('/add', function (request, response) {
   response.sendFile(__dirname + '/views/add-forms.html')
 })
+
+const index = require('./src/controller/index')
+
+app.get('/ejs', index.index)
 
 const json = require('./src/controller/json')
 

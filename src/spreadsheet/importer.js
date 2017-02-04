@@ -36,9 +36,9 @@ const getSheet = function getSheet(sheetName) {
       key: process.env.GOOGLE_SPREADSHEET_ID
     }, function(err, spreadsheet) {
       if (err) return reject('error loading spreadsheet:' + err)
-      
+
       const sheet = sheets[sheetName]
-      
+
       spreadsheet.worksheets[sheet.number].cells({
         range: sheet.range
       }, function(err, result) {
@@ -54,7 +54,14 @@ function transformSheet(sheetFromGoogle)
 {
   let headers = _.map(sheetFromGoogle[1], 'value')
   delete sheetFromGoogle[1]
-  
+
+  var thing = _.map(sheetFromGoogle, (row) => { return makeRow(row, headers) })
+  thing = _.filter(thing, (row) => { return row.approved == 1 })
+  thing = _.sortBy(thing, 'name')
+  return thing
+
+  // for some reason we're getting a lodash wrapper result from this... so temp overriding
+
   return _.chain(sheetFromGoogle)
     .map((row) => { return makeRow(row, headers) })
     .filter((row) => { return row.approved == 1 })
