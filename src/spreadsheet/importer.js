@@ -59,11 +59,6 @@ const getSheet = function getSheet(sheetName) {
   })
 }
 
-function cache(key, create)
-{
-
-}
-
 // Transform a sheet from Google into a JSON format
 // @todo: Delete approved
 function transformSheet(sheetFromGoogle)
