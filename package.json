@@ -13,6 +13,7 @@
     "express-handlebars": "^3.0.0",
     "google-spreadsheets": "^0.5.1",
     "lodash": "^4.17.4",
+    "memory-cache": "^0.1.6",
     "promise": "^7.1.1"
   },
   "engines": {

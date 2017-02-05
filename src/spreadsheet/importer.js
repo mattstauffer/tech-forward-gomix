@@ -1,6 +1,7 @@
 const GoogleSpreadsheets = require('google-spreadsheets')
 const _ = require('lodash')
 const Promise = require('promise')
+const mcache = require('memory-cache')
 
 const sheets = {
   'orgs': {
@@ -32,6 +33,14 @@ const getSheet = function getSheet(sheetName) {
       return reject('Not a valid sheet')
     }
 
+    let cacheKey = 'sheet_' + sheetName
+    let cacheResponse = mcache.get(cacheKey)
+
+    if (cacheResponse) {
+      resolve(cacheResponse)
+      return
+    }
+
     GoogleSpreadsheets({
       key: process.env.GOOGLE_SPREADSHEET_ID
     }, function(err, spreadsheet) {
@@ -42,10 +51,17 @@ const getSheet = function getSheet(sheetName) {
       spreadsheet.worksheets[sheet.number].cells({
         range: sheet.range
       }, function(err, result) {
-        resolve(transformSheet(result.cells))
+        let output = transformSheet(result.cells)
+        mcache.put(cacheKey, output, 60000) // 60 seconds
+        resolve(output)
       })
     })
   })
+}
+
+function cache(key, create)
+{
+
 }
 
 // Transform a sheet from Google into a JSON format
