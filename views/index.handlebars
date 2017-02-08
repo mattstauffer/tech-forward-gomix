@@ -13,12 +13,12 @@
             <hr>
 
             <div class="page-nav">
-              <strong>Sections</strong><br>
-              <a href="#orgs">Organizations</a> bringing technologists together<br>
-              <a href="#projects">Projects</a> that are open sourced that you can help with<br>
-              <a href="#resources">Resources</a> providing support to activists and organizers<br>
-              <a href="#data-sources">Data Sources</a> with useful information for activism-focused applications<br>
-              <a href="#tools">Tools</a> that are ready to be used today
+                <strong>Sections</strong><br>
+                <a href="#orgs">Organizations</a> bringing technologists together<br>
+                <a href="#projects">Projects</a> that are open sourced that you can help with<br>
+                <a href="#resources">Resources</a> providing support to activists and organizers<br>
+                <a href="#data-sources">Data Sources</a> with useful information for activism-focused applications<br>
+                <a href="#tools">Tools</a> that are ready to be used today
             </div>
 
             <hr>
@@ -67,21 +67,21 @@
                 <div class="media item">
                     <a href="{{ url }}" class="media-figure">
                         {{#if logo}}
-                          <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
-                          {{else}}
-                          <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
-                          {{/if}}
+                        <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
+                        {{else}}
+                        <img src="https://cdn.gomix.com/16d249c6-c928-4616-a548-3108bce18ead%2Farrow.png" alt="{{ name }}" class="item-logo">
+                        {{/if}}
                     </a>
 
                     <div class="body media-body">
-                          <a href="{{ url }}"><h3>{{ name }}</h3></a>
-                          <p>{{ description }}</p>
-                          {{#if builtBy}}
-                            <p>BUILT BY: <a href="{{ builtBy.url }}">{{ builtBy.text }}</a></p>
-                            {{/if}}
-                            {{#if skills}}
-                            <p>SKILLS NEEDED: {{ skills }}</p>
-                            {{/if}}
+                        <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                        <p>{{ description }}</p>
+                        {{#if builtByText}}
+                        <p>BUILT BY: <a href="{{ builtByUrl }}">{{ builtByText }}</a></p>
+                        {{/if}}
+                        {{#if skills}}
+                        <p>SKILLS NEEDED: {{ skills }}</p>
+                        {{/if}}
                     </div>
                 </div>
 
@@ -143,9 +143,16 @@
             <br><br>
             <h2 id="tools" class="section-title">Tools</h2>
             <p>Web- or phone-based tools—usable by anyone, powered by tech.</p>
+
+            <div class="tool-category-picker">
+                Filter tools: <select id="tool-category-picker">
+                    <option value="">Show all categories</option>
+                </select>
+            </div>
+
             <section class="item-container container--tools">
             {{#each tools}}
-                <div class="media item">
+                <div class="media item" data-tool-category="{{ category }}">
                     <a href="{{ url }}" class="media-figure">
                         {{#if logo}}
                         <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
@@ -163,7 +170,8 @@
                     </div>
                 </div>
 
-                <hr>
+                <!-- @todo: Move the hr into css so we're not doing this awkwardly -->
+                <hr data-tool-category="{{ category }}">
             {{/each}}
             </section>
 

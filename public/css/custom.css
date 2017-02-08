@@ -79,3 +79,29 @@ h2 {
 .copyright {
   text-align: center;
 }
+
+.hidden {
+  display: none;
+}
+
+.tool-category-picker {
+  color: #666;
+  margin-top: -1.5em;
+  text-align: right;
+}
+.tool-category-picker select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  height: 2em;
+  margin-bottom: 2em;
+  max-width: 100%;
+  padding: 0 1em;
+  width: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .tool-category-picker select {
+    margin-left: 1em;
+  }
+}
