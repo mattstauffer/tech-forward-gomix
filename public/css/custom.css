@@ -6,7 +6,7 @@ html, body {
   color: #444;
 }
 
-.page-nav {
+.page-nav a {
   font-weight: bold;
 }
 
@@ -49,6 +49,15 @@ h2 {
 
   .intro p + p {
     margin-top: -1em;
+  }
+
+.not-a-technologist {
+  text-align: center;
+}
+
+  .not-a-technologist a {
+    border-color: #ff5644;
+    color: #ff5644;
   }
 
 .section-title {
