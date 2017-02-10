@@ -1,5 +1,6 @@
-const $tools = $('[data-tool-category]')
-const $picker = $('#tool-category-picker')
+const $tools = document.querySelectorAll('[data-tool-category]');
+const $picker = document.getElementById('tool-category-picker')
+
 const categoryTranslator = {
   'cta': 'Calls to Action',
   'learn': 'Learn About Politics and Resistance',
@@ -15,8 +16,8 @@ const categoryTranslator = {
 
 buildCategoryOptions()
 
-$picker.on('change', (selected) => {
-  showToolsByCategory($picker.val())
+$picker.addEventListener('change', (a) => {
+  showToolsByCategory($picker.options[$picker.selectedIndex].value)
 })
 
 // @todo bring in lodash to simplify this
@@ -28,7 +29,7 @@ function buildCategoryOptions()
     options += '<option value="' + categorySlug + '">' + translateCategory(categorySlug) + '</option>'
   }
 
-  $picker.append(options)
+  $picker.insertAdjacentHTML('beforeend', options)
 }
 
 function translateCategory(categorySlug)
@@ -40,8 +41,41 @@ function translateCategory(categorySlug)
 
 function showToolsByCategory(category)
 {
-  if (category == '') return $tools.removeClass('hidden')
+  if (category == '') return removeClass('hidden', $tools)
 
-  $tools.addClass('hidden').filter('[data-tool-category=' + category + ']').removeClass('hidden')
+  addClass('hidden', $tools)
+  removeClass('hidden', filterByCategory(category, $tools))
 }
 
+function removeClass(theclass, els)
+{
+  forEach(els, (el) => {
+    els[el].classList.remove(theclass)
+  })
+}
+
+function addClass(theclass, els)
+{
+  forEach(els, (el) => {
+    els[el].classList.add(theclass)
+  })
+}
+
+function filterByCategory(category, els)
+{
+  let returnEls = []
+
+  forEach(els, (el) => {
+    let thisCat = els[el].getAttribute('data-tool-category')
+    if (thisCat == category) returnEls.push(els[el])
+  })
+
+  return returnEls
+}
+
+function forEach(array, callback, scope)
+{
+  for (var i = 0; i < array.length; i++) {
+    callback.call(scope, i, array[i])
+  }
+}
