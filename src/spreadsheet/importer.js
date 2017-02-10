@@ -3,6 +3,8 @@ const _ = require('lodash')
 const Promise = require('promise')
 const mcache = require('memory-cache')
 
+const secondsToCache = 360
+
 const sheets = {
   'orgs': {
     'number': 0,
@@ -14,7 +16,7 @@ const sheets = {
   },
   'tools': {
     'number': 2,
-    'range': 'R1C1:R99C5'
+    'range': 'R1C1:R99C6'
   },
   'resources': {
     'number': 3,
@@ -50,7 +52,7 @@ const getSheet = function getSheet(sheetName) {
         range: sheet.range
       }, function(err, result) {
         let output = transformSheet(result.cells)
-        mcache.put(cacheKey, output, 60000) // 60 seconds
+        mcache.put(cacheKey, output, secondsToCache * 1000)
         resolve(output)
       })
     })

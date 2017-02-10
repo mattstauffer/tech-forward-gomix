@@ -6,7 +6,7 @@ html, body {
   color: #444;
 }
 
-.page-nav {
+.page-nav a {
   font-weight: bold;
 }
 
@@ -51,6 +51,15 @@ h2 {
     margin-top: -1em;
   }
 
+.not-a-technologist {
+  text-align: center;
+}
+
+  .not-a-technologist a {
+    border-color: #ff5644;
+    color: #ff5644;
+  }
+
 .section-title {
   margin-bottom: 0.5em;
 }
@@ -69,4 +78,30 @@ h2 {
 
 .copyright {
   text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.tool-category-picker {
+  color: #666;
+  margin-top: -1.5em;
+  text-align: right;
+}
+.tool-category-picker select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  height: 2em;
+  margin-bottom: 2em;
+  max-width: 100%;
+  padding: 0 1em;
+  width: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .tool-category-picker select {
+    margin-left: 1em;
+  }
 }
