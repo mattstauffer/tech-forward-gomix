@@ -16,11 +16,10 @@ const categoryTranslator = {
 
 buildCategoryOptions()
 
-$picker.addEventListener('change', (a) => {
+$picker.addEventListener('change', () => {
   showToolsByCategory($picker.options[$picker.selectedIndex].value)
 })
 
-// @todo bring in lodash to simplify this
 function buildCategoryOptions()
 {
   let options = ''
