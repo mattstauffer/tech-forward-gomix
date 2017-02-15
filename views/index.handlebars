@@ -18,7 +18,8 @@
                 <a href="#projects">Projects</a> that are open sourced that you can help with<br>
                 <a href="#resources">Resources</a> providing support to activists and organizers<br>
                 <a href="#data-sources">Data Sources</a> with useful information for activism-focused applications<br>
-                <a href="#tools">Tools</a> that are ready to be used today
+                <a href="#tools">Tools</a> that are ready to be used today<br>
+                <a href="#articles">Articles</a> from other technologists about the challenges in front of us<br>
             </div>
 
             <hr>
@@ -173,6 +174,22 @@
                 <!-- @todo: Move the hr into css so we're not doing this awkwardly -->
                 <hr data-tool-category="{{ category }}">
             {{/each}}
+            </section>
+
+            <br><br>
+            <h2 id="articles" class="section-title">Articles</h2>
+            <p>Articles written by other technologists about the "how" and "why" of our resistance.</p>
+            <section class="item-container container--articles">
+
+            {{#each articles}}
+                <div class="media-body">
+                    <a href="{{ url }}"><h3>{{ name }}</h3></a>
+                    By: <a href="{{ authorUrl }}">{{ authorName }}</a>
+                </div>
+
+                <hr>
+            {{/each}}
+
             </section>
 
         </div>

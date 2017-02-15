@@ -25,6 +25,10 @@ const sheets = {
   'dataSources': {
     'number': 4,
     'range': 'R1C1:R99C5'
+  },
+  'articles': {
+    'number': 5,
+    'range': 'R1C1:R99C5'
   }
 }
 
