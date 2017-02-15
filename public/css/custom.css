@@ -95,12 +95,12 @@ h2 {
   display: none;
 }
 
-.tool-category-picker {
+.section-filter-picker {
   color: #666;
   margin-top: -1.5em;
   text-align: right;
 }
-.tool-category-picker select {
+.section-filter-picker select {
   border: 1px solid #ccc;
   border-radius: 5px;
   display: inline-block;
@@ -112,7 +112,7 @@ h2 {
 }
 
 @media only screen and (min-width: 600px) {
-  .tool-category-picker select {
+  .section-filter-picker select {
     margin-left: 1em;
   }
 }

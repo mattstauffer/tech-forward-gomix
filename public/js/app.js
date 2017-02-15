@@ -1,5 +1,61 @@
+/** Build and handle picker for projects */
+const $projects = document.querySelectorAll('[data-skills]')
+const $projectsPicker = document.getElementById('project-skill-picker')
+
+buildSkillOptions()
+
+$projectsPicker.addEventListener('change', () => {
+  showProjectsBySkill($projectsPicker.options[$projectsPicker.selectedIndex].value)
+})
+
+function buildSkillOptions()
+{
+  let skills = []
+
+  forEach($projects, (project) => {
+    skills = skills.concat(
+      $projects[project].getAttribute('data-skills').trim().split(/\s*,\s*/)
+    )
+  })
+
+  // de-duplicate
+  skills = skills.filter((elem, index, self) => {
+    return index == self.indexOf(elem);
+  }).sort()
+
+  let options = ''
+
+  for (skill in skills) {
+    options += '<option value="' + skills[skill] + '">' + skills[skill] + '</option>'
+  }
+
+  $projectsPicker.insertAdjacentHTML('beforeend', options)
+}
+
+function showProjectsBySkill(skill)
+{
+  if (skill == '') return removeClass('hidden', $projects)
+
+  addClass('hidden', $projects)
+  removeClass('hidden', filterBySkill(skill, $projects))
+}
+
+function filterBySkill(skill, els)
+{
+  let returnEls = []
+
+  forEach(els, (el) => {
+    let thisSkills = els[el].getAttribute('data-skills')
+    if (thisSkills.includes(skill)) returnEls.push(els[el])
+  })
+
+  return returnEls
+}
+
+
+/** Build and handle picker for tools */
 const $tools = document.querySelectorAll('[data-tool-category]');
-const $picker = document.getElementById('tool-category-picker')
+const $toolsPicker = document.getElementById('tool-category-picker')
 
 const categoryTranslator = {
   'cta': 'Calls to Action',
@@ -16,8 +72,8 @@ const categoryTranslator = {
 
 buildCategoryOptions()
 
-$picker.addEventListener('change', () => {
-  showToolsByCategory($picker.options[$picker.selectedIndex].value)
+$toolsPicker.addEventListener('change', () => {
+  showToolsByCategory($toolsPicker.options[$toolsPicker.selectedIndex].value)
 })
 
 function buildCategoryOptions()
@@ -28,7 +84,7 @@ function buildCategoryOptions()
     options += '<option value="' + categorySlug + '">' + translateCategory(categorySlug) + '</option>'
   }
 
-  $picker.insertAdjacentHTML('beforeend', options)
+  $toolsPicker.insertAdjacentHTML('beforeend', options)
 }
 
 function translateCategory(categorySlug)

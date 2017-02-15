@@ -63,9 +63,16 @@
             <br><br>
             <h2 id="projects" class="section-title">Projects</h2>
             <p>Open source projects that technologists can use or contribute to.</p>
+
+            <div class="section-filter-picker">
+                Filter projects: <select id="project-skill-picker">
+                    <option value="">Show all skills</option>
+                </select>
+            </div>
+
             <section class="item-container container--projects">
                 {{#each projects}}
-                <div class="media item">
+                <div class="media item" data-skills="{{ skills }}">
                     <a href="{{ url }}" class="media-figure">
                         {{#if logo}}
                         <img src="{{ logo }}" alt="{{ name }}" class="item-logo">
@@ -86,7 +93,8 @@
                     </div>
                 </div>
 
-                <hr>
+                <!-- @todo: Move the hr into css so we're not doing this awkwardly -->
+                <hr data-skills="{{ skills }}">
                 {{/each}}
             </section>
 
@@ -145,7 +153,7 @@
             <h2 id="tools" class="section-title">Tools</h2>
             <p>Web- or phone-based tools—usable by anyone, powered by tech.</p>
 
-            <div class="tool-category-picker">
+            <div class="section-filter-picker">
                 Filter tools: <select id="tool-category-picker">
                     <option value="">Show all categories</option>
                 </select>
@@ -186,8 +194,6 @@
                     <a href="{{ url }}"><h3>{{ name }}</h3></a>
                     By: <a href="{{ authorUrl }}">{{ authorName }}</a>
                 </div>
-
-                <hr>
             {{/each}}
 
             </section>
